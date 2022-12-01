@@ -1,4 +1,5 @@
 .gradle
 .idea
 build
-src/**/*.txt
+Day*.txt
+!Day*_test.txt
