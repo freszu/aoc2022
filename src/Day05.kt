@@ -36,7 +36,7 @@ private fun parseMoves(movesDescription: String): List<CraneMove> {
 
 fun main() {
 
-    fun part1(input: String): String {
+    fun crateMover9000(input: String): String {
         val (stacks, moves) = parse(input)
         moves.forEach { (count, from, to) ->
             repeat(count) {
@@ -46,7 +46,7 @@ fun main() {
         return stacks.map { it.first() }.joinToString("")
     }
 
-    fun part2(input: String): String {
+    fun crateMover9001(input: String): String {
         val (stacks, moves) = parse(input)
         moves.forEach { (count, from, to) ->
             stacks[to].addAll(0, stacks[from].removeFirst(count))
@@ -58,12 +58,12 @@ fun main() {
     val testInput = readInputAsString("Day05_test")
     val dayInput = readInputAsString("Day05")
 
-    check(part1(testInput) == "CMZ") {
-        "got ${part1(testInput)}"
+    check(crateMover9000(testInput) == "CMZ") {
+        "got ${crateMover9000(testInput)}"
     }
-    println(part1(dayInput))
+    println(crateMover9000(dayInput))
 
 
-    check(part2(testInput) == "MCD")
-    println(part2(dayInput))
+    check(crateMover9001(testInput) == "MCD")
+    println(crateMover9001(dayInput))
 }
