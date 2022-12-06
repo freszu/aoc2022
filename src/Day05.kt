@@ -58,11 +58,8 @@ fun main() {
     val testInput = readInputAsString("Day05_test")
     val dayInput = readInputAsString("Day05")
 
-    check(crateMover9000(testInput) == "CMZ") {
-        "got ${crateMover9000(testInput)}"
-    }
+    check(crateMover9000(testInput) == "CMZ")
     println(crateMover9000(dayInput))
-
 
     check(crateMover9001(testInput) == "MCD")
     println(crateMover9001(dayInput))
