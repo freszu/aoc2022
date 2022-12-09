@@ -2,4 +2,4 @@
 .idea
 build
 Day*.txt
-!Day*_test.txt
+!Day*_test*.txt
