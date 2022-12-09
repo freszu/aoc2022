@@ -32,7 +32,7 @@ fun main() {
             .any(true::equals)
     }
         .flatten()
-        .sumOf { (if (it) 1 else 0) as Int } // Resolution ambiguity?
+        .count(true::equals)
 
     fun part2(matrix: Matrix<Int>) = matrix.map2dIndexed { x, y, treeHouseHeight ->
         Direction.values()
