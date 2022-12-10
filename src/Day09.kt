@@ -45,7 +45,6 @@ fun main() {
     val testInput2 = readInput("Day09_test2")
     val input = readInput("Day09")
 
-    part1(testInput)
     check(part1(testInput) == 13)
     println(part1(input))
 
