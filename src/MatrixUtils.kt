@@ -1,3 +1,6 @@
+import kotlin.math.max
+import kotlin.math.min
+
 typealias Matrix<T> = List<List<T>>
 
 inline fun <T, R> Matrix<T>.map2d(transform: (T) -> R) = this.map { it.map(transform) }
@@ -41,6 +44,19 @@ fun <T> Matrix<T>.findAll(value: T) = sequence {
     for (y in indices) {
         for (x in this@findAll[y].indices) {
             if (this@findAll[y][x] == value) yield(x to y)
+        }
+    }
+}
+
+fun Position.walkHorizontallyOrVertically(to: Position): Sequence<Position> = sequence {
+    if (x != to.x) {
+        for (x in min(x, to.x)..max(x, to.x)) {
+            yield(copy(first = x))
+        }
+    }
+    if (y != to.y) {
+        for (y in min(y, to.y)..max(y, to.y)) {
+            yield(copy(second = y))
         }
     }
 }
