@@ -62,9 +62,7 @@ fun main() {
     check(part1(testInput) == 24)
     println(part1(input))
 
-    check(part2(testInput) == 93) {
-        "expected 93, got ${part2(testInput)}"
-    }
+    check(part2(testInput) == 93)
     println(part2(input))
 
 }
